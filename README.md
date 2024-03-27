@@ -2,7 +2,15 @@
 
 This package contains the b1 description files
 
-## launch files
+## Dependencies
+
+this package depends on the following:
+
+* [sensors_description](https://github.com/LeoBoticsHub/sensors_description.git)
+
+please clone it in the same workspace of b1_description.
+
+## Launch files
 
 To see the robot descriptio on rviz and interact with it:
 
