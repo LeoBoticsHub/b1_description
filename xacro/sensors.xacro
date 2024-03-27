@@ -3,7 +3,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
-    <xacro:include filename="$(find b1_description)/xacro/camera/realsense_d435.urdf.xacro" />
+    <xacro:include filename="$(find sensors_description)/xacro/realsense_d430.urdf.xacro" />
 
     <!-- Lidar -->
     <xacro:if value="${LIDAR}">
@@ -49,29 +49,29 @@
 
     <xacro:if value="${CAMERAS}">
         <!-- Head -->
-        <xacro:realsense_d435 name="d430_head" topics_ns="/d430_head" parent="trunk">
+        <xacro:realsense_d430 name="d430_head" topics_ns="/d430_head" parent="trunk">
             <origin xyz="0.46 -0.0075 0.0378" rpy="${PI} 0 0" />
-        </xacro:realsense_d435>
+        </xacro:realsense_d430>
 
         <!-- Chin -->
-        <xacro:realsense_d435 name="d430_chin" topics_ns="/d430_chin" parent="trunk">
+        <xacro:realsense_d430 name="d430_chin" topics_ns="/d430_chin" parent="trunk">
             <origin xyz="0.462 -0.0075 -0.06" rpy="${PI} ${PI/2} 0" />
-        </xacro:realsense_d435>
+        </xacro:realsense_d430>
 
         <!-- Bottom -->
-        <xacro:realsense_d435 name="d430_bottom" topics_ns="/d430_bottom" parent="trunk">
+        <xacro:realsense_d430 name="d430_bottom" topics_ns="/d430_bottom" parent="trunk">
             <origin xyz="-0.473 0.0075 -0.065" rpy="0 ${PI/2} 0" />
-        </xacro:realsense_d435>
+        </xacro:realsense_d430>
 
         <!-- Left -->
-        <xacro:realsense_d435 name="d430_left" topics_ns="/d430_left" parent="trunk">
+        <xacro:realsense_d430 name="d430_left" topics_ns="/d430_left" parent="trunk">
             <origin xyz="-0.095 0.125 -0.0135" rpy="${PI} ${PI/9} ${PI/2}" />
-        </xacro:realsense_d435>
+        </xacro:realsense_d430>
 
         <!-- Right -->
-        <xacro:realsense_d435 name="d435" topics_ns="/d435_right" parent="trunk">
+        <xacro:realsense_d430 name="d430" topics_ns="/d430_right" parent="trunk">
             <origin xyz="-0.1025 -0.1175 -0.0375" rpy="0 ${PI/9} -${PI/2}" />
-        </xacro:realsense_d435>
+        </xacro:realsense_d430>
     </xacro:if> 
 
 </robot>
