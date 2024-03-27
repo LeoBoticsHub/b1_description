@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
+    <xacro:include filename="$(find b1_description)/xacro/camera/realsense_d435.urdf.xacro" />
+
+    <!-- Lidar -->
+    <xacro:if value="${LIDAR}">
+        <material name="gray">
+            <color rgba="0.6 0.6 0.6 1.0"/>
+        </material>
+
+        <joint name="lidar_mount_joint" type="fixed">
+            <parent link="trunk"/>
+            <child link="lidar_mount"/>
+            <origin xyz="0.16 0 0.11" rpy="0 0 0"/>
+        </joint>
+
+        <link name="lidar_mount">
+            <visual>
+                <geometry>
+                    <box size="0.12 0.12 0.05" />
+                </geometry>
+                <material name="gray"/>
+            </visual>
+            <collision>
+                <geometry>
+                    <box size="0.12 0.12 0.05" />
+                </geometry>
+            </collision>
+            <inertial>
+            <mass value="0.00001"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0000001" ixy="0" ixz="0" iyy="0.0000001" iyz="0" izz="0.0000001"/>
+        </inertial>
+        </link>
+        <gazebo reference="lidar_mount">
+            <material>Gazebo/White</material>
+        </gazebo>
+
+        <xacro:VLP-16 parent="lidar_mount" name="lidar" topic="/lidar_points"
+                    organize_cloud="true" hz="10" gpu="true">
+            <origin xyz="0 0 0.025" rpy="0 0 0" />
+        </xacro:VLP-16>
+    </xacro:if> 
+
+    <!-- Cameras -->
+
+    <xacro:if value="${CAMERAS}">
+        <!-- Head -->
+        <xacro:realsense_d435 name="d430_head" topics_ns="/d430_head" parent="trunk">
+            <origin xyz="0.46 -0.0075 0.0378" rpy="${PI} 0 0" />
+        </xacro:realsense_d435>
+
+        <!-- Chin -->
+        <xacro:realsense_d435 name="d430_chin" topics_ns="/d430_chin" parent="trunk">
+            <origin xyz="0.462 -0.0075 -0.06" rpy="${PI} ${PI/2} 0" />
+        </xacro:realsense_d435>
+
+        <!-- Bottom -->
+        <xacro:realsense_d435 name="d430_bottom" topics_ns="/d430_bottom" parent="trunk">
+            <origin xyz="-0.473 0.0075 -0.065" rpy="0 ${PI/2} 0" />
+        </xacro:realsense_d435>
+
+        <!-- Left -->
+        <xacro:realsense_d435 name="d430_left" topics_ns="/d430_left" parent="trunk">
+            <origin xyz="-0.095 0.125 -0.0135" rpy="${PI} ${PI/9} ${PI/2}" />
+        </xacro:realsense_d435>
+
+        <!-- Right -->
+        <xacro:realsense_d435 name="d435" topics_ns="/d435_right" parent="trunk">
+            <origin xyz="-0.1025 -0.1175 -0.0375" rpy="0 ${PI/9} -${PI/2}" />
+        </xacro:realsense_d435>
+    </xacro:if> 
+
+</robot>
