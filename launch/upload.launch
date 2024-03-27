@@ -8,9 +8,9 @@
     <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find b1_description)/xacro/robot.xacro'
             DEBUG:=$(arg user_debug) SENSORS:=$(arg sensors) LIDAR:=$(arg lidar) CAMERAS:=$(arg cameras)"/>
             
-       <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
         
     <node pkg="rviz" type="rviz" name="rviz" respawn="false" output="screen"
-        args="-d $(find b1_description)/launch/check_joint.rviz"/>
+        args="-d $(find b1_description)/rviz/robot_description.rviz"/>
 
 </launch>

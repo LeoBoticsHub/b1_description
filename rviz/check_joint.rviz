@@ -6,7 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /RobotModel1
-        - /TF1
         - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 499
@@ -208,7 +207,227 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        d430_bottom_bottom_screw_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_bottom_color_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_bottom_color_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_bottom_depth_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_bottom_depth_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_bottom_left_ir_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_bottom_left_ir_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_bottom_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        d430_bottom_right_ir_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_bottom_right_ir_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_bottom_screw_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_chin_bottom_screw_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_chin_color_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_chin_color_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_chin_depth_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_chin_depth_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_chin_left_ir_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_chin_left_ir_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_chin_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        d430_chin_right_ir_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_chin_right_ir_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_color_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_color_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_depth_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_depth_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_head_bottom_screw_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_head_color_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_head_color_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_head_depth_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_head_depth_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_head_left_ir_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_head_left_ir_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_head_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        d430_head_right_ir_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_head_right_ir_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_left_bottom_screw_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_left_color_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_left_color_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_left_depth_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_left_depth_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_left_ir_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_left_ir_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_left_left_ir_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_left_left_ir_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        d430_left_right_ir_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_left_right_ir_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        d430_right_ir_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        d430_right_ir_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        lidar:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        lidar_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        lidar_mount:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -234,76 +453,12 @@ Visualization Manager:
       Show Trail: false
       Value: false
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Filter (blacklist): ""
       Filter (whitelist): ""
       Frame Timeout: 15
       Frames:
-        All Enabled: false
-        FL_calf:
-          Value: false
-        FL_calf_rotor:
-          Value: false
-        FL_foot:
-          Value: false
-        FL_hip:
-          Value: false
-        FL_hip_rotor:
-          Value: false
-        FL_thigh:
-          Value: false
-        FL_thigh_rotor:
-          Value: false
-        FR_calf:
-          Value: false
-        FR_calf_rotor:
-          Value: false
-        FR_foot:
-          Value: false
-        FR_hip:
-          Value: false
-        FR_hip_rotor:
-          Value: false
-        FR_thigh:
-          Value: false
-        FR_thigh_rotor:
-          Value: false
-        RL_calf:
-          Value: false
-        RL_calf_rotor:
-          Value: false
-        RL_foot:
-          Value: false
-        RL_hip:
-          Value: false
-        RL_hip_rotor:
-          Value: false
-        RL_thigh:
-          Value: false
-        RL_thigh_rotor:
-          Value: false
-        RR_calf:
-          Value: false
-        RR_calf_rotor:
-          Value: false
-        RR_foot:
-          Value: false
-        RR_hip:
-          Value: false
-        RR_hip_rotor:
-          Value: false
-        RR_thigh:
-          Value: false
-        RR_thigh_rotor:
-          Value: false
-        base:
-          Value: false
-        imu_link:
-          Value: false
-        odom:
-          Value: true
-        trunk:
-          Value: true
+        All Enabled: true
       Marker Alpha: 1
       Marker Scale: 1
       Name: TF
@@ -311,63 +466,14 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        base:
-          {}
-        odom:
-          trunk:
-            FL_hip:
-              FL_thigh:
-                FL_calf:
-                  FL_foot:
-                    {}
-                FL_calf_rotor:
-                  {}
-              FL_thigh_rotor:
-                {}
-            FL_hip_rotor:
-              {}
-            FR_hip:
-              FR_thigh:
-                FR_calf:
-                  FR_foot:
-                    {}
-                FR_calf_rotor:
-                  {}
-              FR_thigh_rotor:
-                {}
-            FR_hip_rotor:
-              {}
-            RL_hip:
-              RL_thigh:
-                RL_calf:
-                  RL_foot:
-                    {}
-                RL_calf_rotor:
-                  {}
-              RL_thigh_rotor:
-                {}
-            RL_hip_rotor:
-              {}
-            RR_hip:
-              RR_thigh:
-                RR_calf:
-                  RR_foot:
-                    {}
-                RR_calf_rotor:
-                  {}
-              RR_thigh_rotor:
-                {}
-            RR_hip_rotor:
-              {}
-            imu_link:
-              {}
+        {}
       Update Interval: 0
-      Value: true
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 238; 238; 238
     Default Light: true
-    Fixed Frame: odom
+    Fixed Frame: base
     Frame Rate: 30
   Name: root
   Tools:
@@ -391,7 +497,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 4.833665370941162
+      Distance: 3.790661096572876
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -399,17 +505,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.1510656476020813
-        Y: -0.7418215870857239
-        Z: 0.5021914839744568
+        X: 0.14634916186332703
+        Y: 0.3891414999961853
+        Z: 0.12652361392974854
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.6797959208488464
+      Pitch: 0.28479641675949097
       Target Frame: <Fixed Frame>
-      Yaw: 4.728619575500488
+      Yaw: 4.643614292144775
     Saved: ~
 Window Geometry:
   Displays:
@@ -428,4 +534,4 @@ Window Geometry:
     collapsed: false
   Width: 1389
   X: 472
-  Y: 85
+  Y: 48
