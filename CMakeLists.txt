@@ -1,19 +1,31 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
 project(b1_description)
 
-find_package(catkin REQUIRED COMPONENTS
-    genmsg
-    roscpp
-    std_msgs
-    tf
-)
+find_package(catkin QUIET)
+find_package(ament_cmake QUIET)
 
-catkin_package(
-    CATKIN_DEPENDS
-)
+find_package(sensors_description REQUIRED)
 
-include_directories(
-    # include
-    ${Boost_INCLUDE_DIR}
-    ${catkin_INCLUDE_DIRS}
-)
+if(${catkin_FOUND})
+
+    catkin_package()
+
+    set(SHARE_DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+
+elseif(${ament_cmake_FOUND})
+
+    ament_package()
+
+    set(SHARE_DESTINATION share/${PROJECT_NAME})
+
+endif()
+
+# Install directories
+set(directories launch config meshes rviz xacro)
+foreach(dir IN LISTS directories)
+    install(
+        DIRECTORY ${dir}
+        DESTINATION ${SHARE_DESTINATION}
+    )
+endforeach()
+
