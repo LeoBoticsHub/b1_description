@@ -6,8 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /RobotModel1/Status1
-        - /TF1/Status1
         - /TF1/Frames1
         - /TF1/Tree1
       Splitter Ratio: 0.5
@@ -615,6 +613,8 @@ Visualization Manager:
           Value: false
         lidar_mount:
           Value: false
+        odom:
+          Value: true
         trunk:
           Value: true
       Marker Scale: 1
@@ -625,12 +625,48 @@ Visualization Manager:
       Tree:
         base:
           trunk:
+            FL_hip:
+              FL_thigh:
+                FL_calf:
+                  FL_foot:
+                    {}
+                FL_calf_rotor:
+                  {}
+              FL_thigh_rotor:
+                {}
             FL_hip_rotor:
               {}
+            FR_hip:
+              FR_thigh:
+                FR_calf:
+                  FR_foot:
+                    {}
+                FR_calf_rotor:
+                  {}
+              FR_thigh_rotor:
+                {}
             FR_hip_rotor:
               {}
+            RL_hip:
+              RL_thigh:
+                RL_calf:
+                  RL_foot:
+                    {}
+                RL_calf_rotor:
+                  {}
+              RL_thigh_rotor:
+                {}
             RL_hip_rotor:
               {}
+            RR_hip:
+              RR_thigh:
+                RR_calf:
+                  RR_foot:
+                    {}
+                RR_calf_rotor:
+                  {}
+              RR_thigh_rotor:
+                {}
             RR_hip_rotor:
               {}
             d430_bottom_bottom_screw_frame:
@@ -709,12 +745,14 @@ Visualization Manager:
               lidar_base_link:
                 lidar:
                   {}
+        odom:
+          {}
       Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: base
+    Fixed Frame: odom
     Frame Rate: 30
   Name: root
   Tools:
@@ -769,10 +807,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3403978943824768
+      Pitch: 0.26539793610572815
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.660404682159424
+      Yaw: 4.625402450561523
     Saved: ~
 Window Geometry:
   Displays:
