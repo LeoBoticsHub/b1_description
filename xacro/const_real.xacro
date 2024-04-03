@@ -73,88 +73,88 @@
     <xacro:property name="calf_torque_max" value="140"/>
 
     <!-- dynamics inertial value -->
-       <!-- trunk -->
-    <xacro:property name="trunk_mass" value="5.204"/>
-    <xacro:property name="trunk_com_x" value="0.0223"/>
-    <xacro:property name="trunk_com_y" value="0.002"/>
-    <xacro:property name="trunk_com_z" value="-0.0005"/>
-    <xacro:property name="trunk_ixx" value="0.0168128557"/>
-    <xacro:property name="trunk_ixy" value="-0.0002296769"/>
-    <xacro:property name="trunk_ixz" value="-0.0002945293"/>
-    <xacro:property name="trunk_iyy" value="0.063009565"/>
-    <xacro:property name="trunk_iyz" value="-0.0000418731"/>
-    <xacro:property name="trunk_izz" value="0.0716547275"/>
+    <!-- trunk -->
+    <xacro:property name="trunk_mass" value="25"/>
+    <xacro:property name="trunk_com_x" value="0.008987"/>
+    <xacro:property name="trunk_com_y" value="0.002243"/>
+    <xacro:property name="trunk_com_z" value="0.003013"/>
+    <xacro:property name="trunk_ixx" value="0.183142146"/>
+    <xacro:property name="trunk_ixy" value="-0.001379002"/>
+    <xacro:property name="trunk_ixz" value="-0.027956055"/>
+    <xacro:property name="trunk_iyy" value="0.756327752"/>
+    <xacro:property name="trunk_iyz" value="0.000193774"/>
+    <xacro:property name="trunk_izz" value="0.783777558"/>
 
     <!-- hip (left front) -->
-    <xacro:property name="hip_mass" value="0.591"/>
-    <xacro:property name="hip_com_x" value="-0.005657"/>
-    <xacro:property name="hip_com_y" value="-0.008752"/>
-    <xacro:property name="hip_com_z" value="-0.000102"/>
-    <xacro:property name="hip_ixx" value="0.000334008405"/>
-    <xacro:property name="hip_ixy" value="-0.000010826066"/>
-    <xacro:property name="hip_ixz" value="0.000001290732"/>
-    <xacro:property name="hip_iyy" value="0.000619101213"/>
-    <xacro:property name="hip_iyz" value="0.000001643194"/>
-    <xacro:property name="hip_izz" value="0.00040057614"/>
+    <xacro:property name="hip_mass" value="2.1"/>
+    <xacro:property name="hip_com_x" value="-0.020298"/>
+    <xacro:property name="hip_com_y" value="0.009758"/>
+    <xacro:property name="hip_com_z" value="0.000109"/>
+    <xacro:property name="hip_ixx" value="0.00406608"/>
+    <xacro:property name="hip_ixy" value="-0.000288071"/>
+    <xacro:property name="hip_ixz" value="-0.000004371"/>
+    <xacro:property name="hip_iyy" value="0.008775259"/>
+    <xacro:property name="hip_iyz" value="0.000001811"/>
+    <xacro:property name="hip_izz" value="0.006060348"/>
 
-    <xacro:property name="hip_rotor_mass" value="0.089"/>
+    <xacro:property name="hip_rotor_mass" value="0.199"/>
     <xacro:property name="hip_rotor_com_x" value="0.0"/>
     <xacro:property name="hip_rotor_com_y" value="0.0"/>
     <xacro:property name="hip_rotor_com_z" value="0.0"/>
-    <xacro:property name="hip_rotor_ixx" value="0.000111842"/>
+    <xacro:property name="hip_rotor_ixx" value="0.00039249"/>
     <xacro:property name="hip_rotor_ixy" value="0.0"/>
     <xacro:property name="hip_rotor_ixz" value="0.0"/>
-    <xacro:property name="hip_rotor_iyy" value="0.000059647"/>
+    <xacro:property name="hip_rotor_iyy" value="0.000219397"/>
     <xacro:property name="hip_rotor_iyz" value="0.0"/>
-    <xacro:property name="hip_rotor_izz" value="0.000059647"/>
+    <xacro:property name="hip_rotor_izz" value="0.000219397"/>
 
     <!-- thigh -->
-    <xacro:property name="thigh_mass" value="0.92"/>
-    <xacro:property name="thigh_com_x" value="-0.003342"/>
-    <xacro:property name="thigh_com_y" value="-0.018054"/>
-    <xacro:property name="thigh_com_z" value="-0.033451"/>
-    <xacro:property name="thigh_ixx" value="0.004431760472"/>
-    <xacro:property name="thigh_ixy" value="0.000057496807"/>
-    <xacro:property name="thigh_ixz" value="-0.000218457134"/>
-    <xacro:property name="thigh_iyy" value="0.004485671726"/>
-    <xacro:property name="thigh_iyz" value="0.000572001265"/>
-    <xacro:property name="thigh_izz" value="0.000740309489"/>
+    <xacro:property name="thigh_mass" value="3.934"/>
+    <xacro:property name="thigh_com_x" value="-0.000235"/>
+    <xacro:property name="thigh_com_y" value="-0.028704"/>
+    <xacro:property name="thigh_com_z" value="-0.054169"/>
+    <xacro:property name="thigh_ixx" value="0.044459086"/>
+    <xacro:property name="thigh_ixy" value="0.000128738"/>
+    <xacro:property name="thigh_ixz" value="-0.002343913"/>
+    <xacro:property name="thigh_iyy" value="0.046023457"/>
+    <xacro:property name="thigh_iyz" value="0.006032996"/>
+    <xacro:property name="thigh_izz" value="0.008696078"/>
 
-    <xacro:property name="thigh_rotor_mass" value="0.089"/>
+    <xacro:property name="thigh_rotor_mass" value="0.266"/>
     <xacro:property name="thigh_rotor_com_x" value="0.0"/>
     <xacro:property name="thigh_rotor_com_y" value="0.0"/>
     <xacro:property name="thigh_rotor_com_z" value="0.0"/>
-    <xacro:property name="thigh_rotor_ixx" value="0.000059647"/>
+    <xacro:property name="thigh_rotor_ixx" value="0.000485657"/>
     <xacro:property name="thigh_rotor_ixy" value="0.0"/>
     <xacro:property name="thigh_rotor_ixz" value="0.0"/>
-    <xacro:property name="thigh_rotor_iyy" value="0.000111842"/>
+    <xacro:property name="thigh_rotor_iyy" value="0.00091885"/>
     <xacro:property name="thigh_rotor_iyz" value="0.0"/>
-    <xacro:property name="thigh_rotor_izz" value="0.000059647"/>
+    <xacro:property name="thigh_rotor_izz" value="0.000485657"/>
 
     <!-- calf -->
-    <xacro:property name="calf_mass" value="0.135862"/>
-    <xacro:property name="calf_com_x" value="0.006197"/>
-    <xacro:property name="calf_com_y" value="0.001408"/>
-    <xacro:property name="calf_com_z" value="-0.116695"/>
-    <xacro:property name="calf_ixx" value="0.001088793059"/>
-    <xacro:property name="calf_ixy" value="-0.000000255679"/>
-    <xacro:property name="calf_ixz" value="0.000007117814"/>
-    <xacro:property name="calf_iyy" value="0.001100428748"/>
-    <xacro:property name="calf_iyz" value="0.000002077264"/>
-    <xacro:property name="calf_izz" value="0.000024787446"/>
+    <xacro:property name="calf_mass" value="0.857"/>
+    <xacro:property name="calf_com_x" value="0.005237"/>
+    <xacro:property name="calf_com_y" value="0.0"/>
+    <xacro:property name="calf_com_z" value="-0.202805"/>
+    <xacro:property name="calf_ixx" value="0.015011003"/>
+    <xacro:property name="calf_ixy" value="0.000000052"/>
+    <xacro:property name="calf_ixz" value="0.000250042"/>
+    <xacro:property name="calf_iyy" value="0.015159462"/>
+    <xacro:property name="calf_iyz" value="0.000000461"/>
+    <xacro:property name="calf_izz" value="0.000375749"/>
 
-    <xacro:property name="calf_rotor_mass" value="0.089"/>
+    <xacro:property name="calf_rotor_mass" value="0.266"/>
     <xacro:property name="calf_rotor_com_x" value="0.0"/>
     <xacro:property name="calf_rotor_com_y" value="0.0"/>
     <xacro:property name="calf_rotor_com_z" value="0.0"/>
-    <xacro:property name="calf_rotor_ixx" value="0.000059647"/>
+    <xacro:property name="calf_rotor_ixx" value="0.000485657"/>
     <xacro:property name="calf_rotor_ixy" value="0.0"/>
     <xacro:property name="calf_rotor_ixz" value="0.0"/>
-    <xacro:property name="calf_rotor_iyy" value="0.000111842"/>
+    <xacro:property name="calf_rotor_iyy" value="0.00091885"/>
     <xacro:property name="calf_rotor_iyz" value="0.0"/>
-    <xacro:property name="calf_rotor_izz" value="0.000059647"/>
+    <xacro:property name="calf_rotor_izz" value="0.000485657"/>
 
     <!-- foot -->
-    <xacro:property name="foot_mass" value="0.06"/>
+    <xacro:property name="foot_mass" value="0.05"/>
 
 </robot>
