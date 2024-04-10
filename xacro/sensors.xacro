@@ -43,7 +43,16 @@
                     organize_cloud="true" hz="10" gpu="true">
             <origin xyz="0 0 0.025" rpy="0 0 0" />
         </xacro:VLP-16>
-    </xacro:if> 
+    </xacro:if>
+
+    <link name="hesai_lidar"/>
+    <joint name="hesai_lidar_joint" type="fixed">
+            <parent link="lidar"/>
+            <child link="hesai_lidar"/>
+            <origin xyz="0 0 0" rpy="0 0 1.57"/>
+    </joint>
+
+
 
     <!-- Cameras -->
 
