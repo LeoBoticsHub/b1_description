@@ -47,8 +47,8 @@ Visualization Manager:
     - Alpha: 1
       Class: rviz_default_plugins/RobotModel
       Collision Enabled: false
-      Description File: ""
-      Description Source: Topic
+      Description File: /home/frollo/ros_workspaces/ros2/unitree_ws/src/b1_description/xacro/robot.urdf
+      Description Source: File
       Description Topic:
         Depth: 5
         Durability Policy: Volatile
@@ -612,8 +612,6 @@ Visualization Manager:
           Value: false
         lidar_mount:
           Value: false
-        odom:
-          Value: true
         trunk:
           Value: true
       Marker Scale: 1
@@ -622,129 +620,128 @@ Visualization Manager:
       Show Axes: true
       Show Names: false
       Tree:
-        odom:
-          trunk:
-            FL_hip:
-              FL_thigh:
-                FL_calf:
-                  FL_foot:
-                    {}
-                FL_calf_rotor:
+        trunk:
+          FL_hip:
+            FL_thigh:
+              FL_calf:
+                FL_foot:
                   {}
-              FL_thigh_rotor:
+              FL_calf_rotor:
                 {}
-            FL_hip_rotor:
+            FL_thigh_rotor:
               {}
-            FR_hip:
-              FR_thigh:
-                FR_calf:
-                  FR_foot:
-                    {}
-                FR_calf_rotor:
+          FL_hip_rotor:
+            {}
+          FR_hip:
+            FR_thigh:
+              FR_calf:
+                FR_foot:
                   {}
-              FR_thigh_rotor:
+              FR_calf_rotor:
                 {}
-            FR_hip_rotor:
+            FR_thigh_rotor:
               {}
-            RL_hip:
-              RL_thigh:
-                RL_calf:
-                  RL_foot:
-                    {}
-                RL_calf_rotor:
+          FR_hip_rotor:
+            {}
+          RL_hip:
+            RL_thigh:
+              RL_calf:
+                RL_foot:
                   {}
-              RL_thigh_rotor:
+              RL_calf_rotor:
                 {}
-            RL_hip_rotor:
+            RL_thigh_rotor:
               {}
-            RR_hip:
-              RR_thigh:
-                RR_calf:
-                  RR_foot:
-                    {}
-                RR_calf_rotor:
+          RL_hip_rotor:
+            {}
+          RR_hip:
+            RR_thigh:
+              RR_calf:
+                RR_foot:
                   {}
-              RR_thigh_rotor:
+              RR_calf_rotor:
                 {}
-            RR_hip_rotor:
+            RR_thigh_rotor:
               {}
-            d430_bottom_bottom_screw_frame:
-              d430_bottom_link:
-                d430_bottom_depth_frame:
-                  d430_bottom_color_frame:
-                    d430_bottom_color_optical_frame:
-                      {}
-                  d430_bottom_depth_optical_frame:
+          RR_hip_rotor:
+            {}
+          d430_bottom_bottom_screw_frame:
+            d430_bottom_link:
+              d430_bottom_depth_frame:
+                d430_bottom_color_frame:
+                  d430_bottom_color_optical_frame:
                     {}
-                  d430_bottom_left_ir_frame:
-                    d430_bottom_left_ir_optical_frame:
-                      {}
-                  d430_bottom_right_ir_frame:
-                    d430_bottom_right_ir_optical_frame:
-                      {}
-            d430_bottom_screw_frame:
-              d430_link:
-                d430_depth_frame:
-                  d430_color_frame:
-                    d430_color_optical_frame:
-                      {}
-                  d430_depth_optical_frame:
+                d430_bottom_depth_optical_frame:
+                  {}
+                d430_bottom_left_ir_frame:
+                  d430_bottom_left_ir_optical_frame:
                     {}
-                  d430_left_ir_frame:
-                    d430_left_ir_optical_frame:
-                      {}
-                  d430_right_ir_frame:
-                    d430_right_ir_optical_frame:
-                      {}
-            d430_chin_bottom_screw_frame:
-              d430_chin_link:
-                d430_chin_depth_frame:
-                  d430_chin_color_frame:
-                    d430_chin_color_optical_frame:
-                      {}
-                  d430_chin_depth_optical_frame:
+                d430_bottom_right_ir_frame:
+                  d430_bottom_right_ir_optical_frame:
                     {}
-                  d430_chin_left_ir_frame:
-                    d430_chin_left_ir_optical_frame:
-                      {}
-                  d430_chin_right_ir_frame:
-                    d430_chin_right_ir_optical_frame:
-                      {}
-            d430_head_bottom_screw_frame:
-              d430_head_link:
-                d430_head_depth_frame:
-                  d430_head_color_frame:
-                    d430_head_color_optical_frame:
-                      {}
-                  d430_head_depth_optical_frame:
+          d430_bottom_screw_frame:
+            d430_link:
+              d430_depth_frame:
+                d430_color_frame:
+                  d430_color_optical_frame:
                     {}
-                  d430_head_left_ir_frame:
-                    d430_head_left_ir_optical_frame:
-                      {}
-                  d430_head_right_ir_frame:
-                    d430_head_right_ir_optical_frame:
-                      {}
-            d430_left_bottom_screw_frame:
-              d430_left_link:
-                d430_left_depth_frame:
-                  d430_left_color_frame:
-                    d430_left_color_optical_frame:
-                      {}
-                  d430_left_depth_optical_frame:
+                d430_depth_optical_frame:
+                  {}
+                d430_left_ir_frame:
+                  d430_left_ir_optical_frame:
                     {}
-                  d430_left_left_ir_frame:
-                    d430_left_left_ir_optical_frame:
-                      {}
-                  d430_left_right_ir_frame:
-                    d430_left_right_ir_optical_frame:
-                      {}
-            imu_link:
-              {}
-            lidar_mount:
-              lidar_base_link:
-                lidar:
-                  hesai_lidar:
+                d430_right_ir_frame:
+                  d430_right_ir_optical_frame:
                     {}
+          d430_chin_bottom_screw_frame:
+            d430_chin_link:
+              d430_chin_depth_frame:
+                d430_chin_color_frame:
+                  d430_chin_color_optical_frame:
+                    {}
+                d430_chin_depth_optical_frame:
+                  {}
+                d430_chin_left_ir_frame:
+                  d430_chin_left_ir_optical_frame:
+                    {}
+                d430_chin_right_ir_frame:
+                  d430_chin_right_ir_optical_frame:
+                    {}
+          d430_head_bottom_screw_frame:
+            d430_head_link:
+              d430_head_depth_frame:
+                d430_head_color_frame:
+                  d430_head_color_optical_frame:
+                    {}
+                d430_head_depth_optical_frame:
+                  {}
+                d430_head_left_ir_frame:
+                  d430_head_left_ir_optical_frame:
+                    {}
+                d430_head_right_ir_frame:
+                  d430_head_right_ir_optical_frame:
+                    {}
+          d430_left_bottom_screw_frame:
+            d430_left_link:
+              d430_left_depth_frame:
+                d430_left_color_frame:
+                  d430_left_color_optical_frame:
+                    {}
+                d430_left_depth_optical_frame:
+                  {}
+                d430_left_left_ir_frame:
+                  d430_left_left_ir_optical_frame:
+                    {}
+                d430_left_right_ir_frame:
+                  d430_left_right_ir_optical_frame:
+                    {}
+          imu_link:
+            {}
+          lidar_mount:
+            lidar_base_link:
+              lidar:
+                hesai_lidar:
+                  {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -783,7 +780,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: odom
+    Fixed Frame: trunk
     Frame Rate: 30
   Name: root
   Tools:
@@ -823,7 +820,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 4.4521260261535645
+      Distance: 4.466434001922607
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -838,10 +835,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3703981935977936
+      Pitch: 0.21039818227291107
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.5272228717803955
+      Yaw: 1.5022226572036743
     Saved: ~
 Window Geometry:
   Displays:
