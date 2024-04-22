@@ -612,6 +612,8 @@ Visualization Manager:
           Value: false
         lidar_mount:
           Value: false
+        odom:
+          Value: true
         trunk:
           Value: true
       Marker Scale: 1
@@ -620,128 +622,129 @@ Visualization Manager:
       Show Axes: true
       Show Names: false
       Tree:
-        trunk:
-          FL_hip:
-            FL_thigh:
-              FL_calf:
-                FL_foot:
+        odom:
+          trunk:
+            FL_hip:
+              FL_thigh:
+                FL_calf:
+                  FL_foot:
+                    {}
+                FL_calf_rotor:
                   {}
-              FL_calf_rotor:
+              FL_thigh_rotor:
                 {}
-            FL_thigh_rotor:
+            FL_hip_rotor:
               {}
-          FL_hip_rotor:
-            {}
-          FR_hip:
-            FR_thigh:
-              FR_calf:
-                FR_foot:
+            FR_hip:
+              FR_thigh:
+                FR_calf:
+                  FR_foot:
+                    {}
+                FR_calf_rotor:
                   {}
-              FR_calf_rotor:
+              FR_thigh_rotor:
                 {}
-            FR_thigh_rotor:
+            FR_hip_rotor:
               {}
-          FR_hip_rotor:
-            {}
-          RL_hip:
-            RL_thigh:
-              RL_calf:
-                RL_foot:
+            RL_hip:
+              RL_thigh:
+                RL_calf:
+                  RL_foot:
+                    {}
+                RL_calf_rotor:
                   {}
-              RL_calf_rotor:
+              RL_thigh_rotor:
                 {}
-            RL_thigh_rotor:
+            RL_hip_rotor:
               {}
-          RL_hip_rotor:
-            {}
-          RR_hip:
-            RR_thigh:
-              RR_calf:
-                RR_foot:
+            RR_hip:
+              RR_thigh:
+                RR_calf:
+                  RR_foot:
+                    {}
+                RR_calf_rotor:
                   {}
-              RR_calf_rotor:
+              RR_thigh_rotor:
                 {}
-            RR_thigh_rotor:
+            RR_hip_rotor:
               {}
-          RR_hip_rotor:
-            {}
-          d430_bottom_bottom_screw_frame:
-            d430_bottom_link:
-              d430_bottom_depth_frame:
-                d430_bottom_color_frame:
-                  d430_bottom_color_optical_frame:
+            d430_bottom_bottom_screw_frame:
+              d430_bottom_link:
+                d430_bottom_depth_frame:
+                  d430_bottom_color_frame:
+                    d430_bottom_color_optical_frame:
+                      {}
+                  d430_bottom_depth_optical_frame:
                     {}
-                d430_bottom_depth_optical_frame:
-                  {}
-                d430_bottom_left_ir_frame:
-                  d430_bottom_left_ir_optical_frame:
+                  d430_bottom_left_ir_frame:
+                    d430_bottom_left_ir_optical_frame:
+                      {}
+                  d430_bottom_right_ir_frame:
+                    d430_bottom_right_ir_optical_frame:
+                      {}
+            d430_bottom_screw_frame:
+              d430_link:
+                d430_depth_frame:
+                  d430_color_frame:
+                    d430_color_optical_frame:
+                      {}
+                  d430_depth_optical_frame:
                     {}
-                d430_bottom_right_ir_frame:
-                  d430_bottom_right_ir_optical_frame:
+                  d430_left_ir_frame:
+                    d430_left_ir_optical_frame:
+                      {}
+                  d430_right_ir_frame:
+                    d430_right_ir_optical_frame:
+                      {}
+            d430_chin_bottom_screw_frame:
+              d430_chin_link:
+                d430_chin_depth_frame:
+                  d430_chin_color_frame:
+                    d430_chin_color_optical_frame:
+                      {}
+                  d430_chin_depth_optical_frame:
                     {}
-          d430_bottom_screw_frame:
-            d430_link:
-              d430_depth_frame:
-                d430_color_frame:
-                  d430_color_optical_frame:
+                  d430_chin_left_ir_frame:
+                    d430_chin_left_ir_optical_frame:
+                      {}
+                  d430_chin_right_ir_frame:
+                    d430_chin_right_ir_optical_frame:
+                      {}
+            d430_head_bottom_screw_frame:
+              d430_head_link:
+                d430_head_depth_frame:
+                  d430_head_color_frame:
+                    d430_head_color_optical_frame:
+                      {}
+                  d430_head_depth_optical_frame:
                     {}
-                d430_depth_optical_frame:
-                  {}
-                d430_left_ir_frame:
-                  d430_left_ir_optical_frame:
+                  d430_head_left_ir_frame:
+                    d430_head_left_ir_optical_frame:
+                      {}
+                  d430_head_right_ir_frame:
+                    d430_head_right_ir_optical_frame:
+                      {}
+            d430_left_bottom_screw_frame:
+              d430_left_link:
+                d430_left_depth_frame:
+                  d430_left_color_frame:
+                    d430_left_color_optical_frame:
+                      {}
+                  d430_left_depth_optical_frame:
                     {}
-                d430_right_ir_frame:
-                  d430_right_ir_optical_frame:
+                  d430_left_left_ir_frame:
+                    d430_left_left_ir_optical_frame:
+                      {}
+                  d430_left_right_ir_frame:
+                    d430_left_right_ir_optical_frame:
+                      {}
+            imu_link:
+              {}
+            lidar_mount:
+              lidar_base_link:
+                lidar:
+                  hesai_lidar:
                     {}
-          d430_chin_bottom_screw_frame:
-            d430_chin_link:
-              d430_chin_depth_frame:
-                d430_chin_color_frame:
-                  d430_chin_color_optical_frame:
-                    {}
-                d430_chin_depth_optical_frame:
-                  {}
-                d430_chin_left_ir_frame:
-                  d430_chin_left_ir_optical_frame:
-                    {}
-                d430_chin_right_ir_frame:
-                  d430_chin_right_ir_optical_frame:
-                    {}
-          d430_head_bottom_screw_frame:
-            d430_head_link:
-              d430_head_depth_frame:
-                d430_head_color_frame:
-                  d430_head_color_optical_frame:
-                    {}
-                d430_head_depth_optical_frame:
-                  {}
-                d430_head_left_ir_frame:
-                  d430_head_left_ir_optical_frame:
-                    {}
-                d430_head_right_ir_frame:
-                  d430_head_right_ir_optical_frame:
-                    {}
-          d430_left_bottom_screw_frame:
-            d430_left_link:
-              d430_left_depth_frame:
-                d430_left_color_frame:
-                  d430_left_color_optical_frame:
-                    {}
-                d430_left_depth_optical_frame:
-                  {}
-                d430_left_left_ir_frame:
-                  d430_left_left_ir_optical_frame:
-                    {}
-                d430_left_right_ir_frame:
-                  d430_left_right_ir_optical_frame:
-                    {}
-          imu_link:
-            {}
-          lidar_mount:
-            lidar_base_link:
-              lidar:
-                hesai_lidar:
-                  {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -780,7 +783,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: trunk
+    Fixed Frame: odom
     Frame Rate: 30
   Name: root
   Tools:
