@@ -7,6 +7,7 @@ This package contains the b1 description files. It works both with ROS and ROS 2
 this package depends on the following:
 
 * [sensors_description](https://github.com/LeoBoticsHub/sensors_description.git)
+* velodyne_description ```sudo apt install ros-$ROS_DISTRO-velodyne-description```
 
 please clone it in the same workspace of b1_description.
 
