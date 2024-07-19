@@ -21,7 +21,7 @@ elseif(${ament_cmake_FOUND})
 endif()
 
 # Install directories
-set(directories launch config meshes rviz xacro)
+set(directories launch config meshes rviz xacro urdf)
 foreach(dir IN LISTS directories)
     install(
         DIRECTORY ${dir}
