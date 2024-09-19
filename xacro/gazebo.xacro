@@ -14,7 +14,8 @@
         </xacro:if>
         <xacro:if value="${ros_version == 2}">        
             <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
-            <parameters>$(find b1_description)/config/ros_control/ros_control.yaml</parameters>
+                <parameters>$(find b1_description)/config/ros_control/ros_control.yaml</parameters>
+                <controlPeriod>0.001</controlPeriod>
           </plugin>
         </xacro:if>   
     </gazebo>
@@ -25,7 +26,7 @@
             <plugin name="3dplot" filename="libLinkPlot3DPlugin.so">
                 <frequency>10</frequency>
                 <plot>
-                    <link>base</link>
+                    <link>trunk</link>
                     <pose>0 0 0 0 0 0</pose>
                     <material>Gazebo/Yellow</material>
                 </plot>
@@ -37,7 +38,7 @@
                   <argument>odom:=odom/ground_truth</argument>
               </ros>
   
-              <body_name>base</body_name>
+              <body_name>trunk</body_name>
               <frame_name>world</frame_name>
               <update_rate>10.0</update_rate>
               <xyz_offset>0 0 0</xyz_offset>
