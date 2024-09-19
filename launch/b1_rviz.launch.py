@@ -41,4 +41,6 @@ def generate_launch_description():
             arguments=['-d', [os.path.join(pkg_path, 'rviz', 'ros2_check_joint.rviz')]]
     )
     
-    return LaunchDescription([joint_state_pub, robot_state_pub, rviz])
+    # return LaunchDescription([joint_state_pub, robot_state_pub, rviz])
+    
+    return LaunchDescription([rviz])
