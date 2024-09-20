@@ -101,15 +101,15 @@
     <xacro:leg name="RL" mirror="1"  mirror_dae="True"   front_hind="-1" front_hind_dae="False" />
 
     <!-- Sensors loading -->
-    <xacro:arg name="SENSORS" default="false"/>
-    <xacro:arg name="LIDAR" default="false"/>
+    <xacro:arg name="SENSORS" default="true"/>
+    <xacro:arg name="LIDAR" default="true"/>
     <xacro:arg name="CAMERAS" default="false"/>
 
     <xacro:property name="LIDAR" value="$(arg LIDAR)"/>
     <xacro:property name="CAMERAS" value="$(arg CAMERAS)"/>
     <xacro:if value="$(arg SENSORS)">
         <xacro:property name="LIDAR" value="true"/>
-        <xacro:property name="CAMERAS" value="true"/>
+        <xacro:property name="CAMERAS" value="false"/>
     </xacro:if>
 
     <xacro:include filename="$(find b1_description)/xacro/sensors.xacro"/>
