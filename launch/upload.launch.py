@@ -40,7 +40,7 @@ def generate_launch_description():
         output='screen',
         parameters=[{
             'robot_description': robot_desc,
-            'tf_prefix': tf_namespace
+            'frame_prefix': tf_namespace
         }]
     )
 
