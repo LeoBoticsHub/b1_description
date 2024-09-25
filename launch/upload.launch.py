@@ -19,6 +19,13 @@ def generate_launch_description():
         default_value='False'
     )
 
+    tf_namespace = LaunchConfiguration('tf_namespace')
+
+    tf_ns_arg = DeclareLaunchArgument(
+        'tf_namespace',
+        default_value=''
+    )
+
     # B1 description loading from xacro
     pkg_path = get_package_share_directory("b1_description")
     xacro_path = os.path.join(pkg_path, 'xacro/robot.xacro')
@@ -32,7 +39,8 @@ def generate_launch_description():
         name='robot_state_publisher',
         output='screen',
         parameters=[{
-            'robot_description': robot_desc
+            'robot_description': robot_desc,
+            'frame_prefix': tf_namespace
         }]
     )
 
@@ -45,4 +53,4 @@ def generate_launch_description():
         arguments=['-d', [os.path.join(pkg_path, 'rviz', 'ros2_robot_description.rviz')]]
     )
     
-    return LaunchDescription([robot_state_pub, rviz])
+    return LaunchDescription([tf_ns_arg, robot_state_pub, rviz])
