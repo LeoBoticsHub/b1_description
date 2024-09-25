@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
+    <xacro:include filename="$(find sensors_description)/xacro/VLP-16.urdf.xacro"/>
     <xacro:include filename="$(find sensors_description)/xacro/realsense_d430.urdf.xacro" />
 
     <!-- Lidar -->
