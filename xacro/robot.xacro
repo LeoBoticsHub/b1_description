@@ -44,7 +44,7 @@
             <geometry>
                 <mesh filename="file://$(find b1_description)/meshes/trunk.dae" scale="1 1 1"/>
             </geometry>
-            <material name="orange"/>
+            <material name="steel_grey"/>
         </visual>
         <collision>
             <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -109,7 +109,7 @@
     <xacro:property name="CAMERAS" value="$(arg CAMERAS)"/>
     <xacro:if value="$(arg SENSORS)">
         <xacro:property name="LIDAR" value="true"/>
-        <xacro:property name="CAMERAS" value="true"/>
+        <xacro:property name="CAMERAS" value="false"/>
     </xacro:if>
 
     <xacro:include filename="$(find b1_description)/xacro/sensors.xacro"/>

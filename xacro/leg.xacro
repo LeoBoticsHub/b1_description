@@ -2,6 +2,10 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+    <xacro:property name="ros_version" value="$(env ROS_VERSION)" />
+    <xacro:arg name="ign" default="false"/>
+    <xacro:property name="ign" value="$(arg ign)"/>
+
     <xacro:include filename="$(find b1_description)/xacro/transmission.xacro"/>
 
     <xacro:macro name="leg" params="name mirror mirror_dae front_hind front_hind_dae">
@@ -65,7 +69,7 @@
                 <geometry>
                     <mesh filename="file://$(find b1_description)/meshes/hip.dae" scale="1 1 1"/>
                 </geometry>
-                <material name="orange"/>
+                <material name="white"/>
             </visual>
             <collision>
                 <origin rpy="${PI/2.0} 0 0" xyz="0 ${hip_offset*mirror} 0"/>
@@ -89,7 +93,7 @@
                 <geometry>
                     <cylinder length="0.02" radius="0.05"/>
                 </geometry>
-                <material name="green"/>
+                <material name="steel_grey"/>
             </visual>
             <!-- <collision>
                 <origin rpy="0 ${PI/2.0} 0" xyz="0 0 0"/>
@@ -133,7 +137,7 @@
                         <mesh filename="file://$(find b1_description)/meshes/thigh_mirror.dae" scale="1 1 1"/>
                     </xacro:if>
                 </geometry>
-                <material name="orange"/>
+                <material name="steel_grey"/>
             </visual>
             <collision>
                 <origin rpy="0 ${PI/2.0} 0" xyz="0 0 ${-thigh_length/2.0}"/>
@@ -157,7 +161,7 @@
                 <geometry>
                     <cylinder length="0.02" radius="0.05"/>
                 </geometry>
-                <material name="green"/>
+                <material name="steel_grey"/>
             </visual>
             <!-- <collision>
                 <origin rpy="${PI/2.0} 0 0" xyz="0 0 0"/>
@@ -196,7 +200,7 @@
                 <geometry>
                     <mesh filename="file://$(find b1_description)/meshes/calf.dae" scale="1 1 1"/>
                 </geometry>
-                <material name="orange"/>
+                <material name="white"/>
             </visual>
             <collision>
                 <origin rpy="0 ${PI/2.0} 0" xyz="0 0 ${-calf_length/2.0}"/>
@@ -220,7 +224,7 @@
                 <geometry>
                     <cylinder length="0.02" radius="0.05"/>
                 </geometry>
-                <material name="green"/>
+                <material name="steel_grey"/>
             </visual>
             <!-- <collision>
                 <origin rpy="${PI/2.0} 0 0" xyz="0 0 0"/>
@@ -250,7 +254,7 @@
                 <geometry>
                     <sphere radius="${foot_radius-0.01}"/>
                 </geometry>
-                <material name="green"/>
+                <material name="steel_grey"/>
             </visual>
             <collision>
                 <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -268,34 +272,65 @@
         </link>
 
         <xacro:leg_transmission name="${name}"/>
-        <xacro:if value="${ros_version == 2}">        
-            <ros2_control name="${name}" type="system">
-                <hardware>
-                    <plugin>gazebo_ros2_control/GazeboSystem</plugin>
-                </hardware>
-                <joint name="${name}_hip_joint">
-                    <command_interface name="effort"/>
-                    <state_interface name="position"/>
-                    <state_interface name="velocity"/>
-                </joint>
-            
-                <joint name="${name}_thigh_joint">
-                    <command_interface name="effort"/>
-                    <state_interface name="position"/>
-                    <state_interface name="velocity"/>
-                </joint>
-            
-                <joint name="${name}_calf_joint">
-                    <command_interface name="effort"/>
-                    <state_interface name="position"/>
-                    <state_interface name="velocity"/>
-                </joint>
-                <joint name="${name}_foot_fixed">
-                    <command_interface name="effort"/>
-                    <state_interface name="position"/>
-                    <state_interface name="velocity"/>
-                </joint>
-            </ros2_control>
+        <xacro:if value="${ros_version == 2}">
+            <xacro:if value="${ign}">
+                <ros2_control name="${name}" type="system">
+                    <hardware>
+                        <plugin>ign_ros2_control/IgnitionSystem</plugin>
+                    </hardware>
+                    <joint name="${name}_hip_joint">
+                        <command_interface name="effort"/>
+                        <state_interface name="position"/>
+                        <state_interface name="velocity"/>
+                    </joint>
+                
+                    <joint name="${name}_thigh_joint">
+                        <command_interface name="effort"/>
+                        <state_interface name="position"/>
+                        <state_interface name="velocity"/>
+                    </joint>
+                
+                    <joint name="${name}_calf_joint">
+                        <command_interface name="effort"/>
+                        <state_interface name="position"/>
+                        <state_interface name="velocity"/>
+                    </joint>
+                    <joint name="${name}_foot_fixed">
+                        <command_interface name="effort"/>
+                        <state_interface name="position"/>
+                        <state_interface name="velocity"/>
+                    </joint>
+                </ros2_control>
+            </xacro:if>
+            <xacro:unless value="${ign}">
+                <ros2_control name="${name}" type="system">
+                    <hardware>
+                        <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+                    </hardware>
+                    <joint name="${name}_hip_joint">
+                        <command_interface name="effort"/>
+                        <state_interface name="position"/>
+                        <state_interface name="velocity"/>
+                    </joint>
+                
+                    <joint name="${name}_thigh_joint">
+                        <command_interface name="effort"/>
+                        <state_interface name="position"/>
+                        <state_interface name="velocity"/>
+                    </joint>
+                
+                    <joint name="${name}_calf_joint">
+                        <command_interface name="effort"/>
+                        <state_interface name="position"/>
+                        <state_interface name="velocity"/>
+                    </joint>
+                    <joint name="${name}_foot_fixed">
+                        <command_interface name="effort"/>
+                        <state_interface name="position"/>
+                        <state_interface name="velocity"/>
+                    </joint>
+                </ros2_control>
+            </xacro:unless>
         </xacro:if> 
     </xacro:macro>
 </robot>
