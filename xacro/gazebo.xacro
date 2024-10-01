@@ -34,7 +34,7 @@
     </gazebo>
 
     <!-- Show the trajectory of trunk center. -->
-    <!-- <gazebo>
+    <gazebo>
         <xacro:if value="${ros_version == 1}">        
             <plugin name="3dplot" filename="libLinkPlot3DPlugin.so">
                 <frequency>10</frequency>
@@ -45,71 +45,104 @@
                 </plot>
             </plugin>
         </xacro:if>
-        <xacro:if value="${ros_version == 2}">        
-            <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
-              <ros>
-                  <argument>odom:=odom/ground_truth</argument>
-              </ros>
-  
-              <body_name>trunk</body_name>
-              <frame_name>world</frame_name>
-              <update_rate>10.0</update_rate>
-              <xyz_offset>0 0 0</xyz_offset>
-              <rpy_offset>0 0 0</rpy_offset>
-              <gaussian_noise>0.01</gaussian_noise>
-          </plugin>
+        <xacro:if value="${ros_version == 2}">
+            <xacro:unless value="${ign}">      
+                <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+                    <ros>
+                        <argument>odom:=odom/ground_truth</argument>
+                    </ros>
+        
+                    <body_name>trunk</body_name>
+                    <frame_name>world</frame_name>
+                    <update_rate>10.0</update_rate>
+                    <xyz_offset>0 0 0</xyz_offset>
+                    <rpy_offset>0 0 0</rpy_offset>
+                    <gaussian_noise>0.01</gaussian_noise>
+                </plugin>
+            </xacro:unless>
         </xacro:if>        
-    </gazebo> -->
+    </gazebo>
 
     <!-- Show the trajectory of foot. You can add another trajectory about another foot. -->
-    <!-- <gazebo>
-        <plugin name="3dplot" filename="libLinkPlot3DPlugin.so">
-            <frequency>100</frequency>
-            <plot>
-                <link>FL_foot</link>
-                <pose>0 0 0 0 0 0</pose>
-                <material>Gazebo/Green</material>
-            </plot>
-        </plugin>
-    </gazebo> -->
+    <xacro:unless value="${ign}">      
+        <gazebo>
+            <plugin name="3dplot" filename="libLinkPlot3DPlugin.so">
+                <frequency>100</frequency>
+                <plot>
+                    <link>FL_foot</link>
+                    <pose>0 0 0 0 0 0</pose>
+                    <material>Gazebo/Green</material>
+                </plot>
+            </plugin>
+        </gazebo>
+    </xacro:unless>
 
-    <!-- <gazebo>
+    <gazebo>
         <xacro:if value="${ros_version == 1}">        
             <plugin filename="libgazebo_ros_force.so" name="gazebo_ros_force">
                 <bodyName>trunk</bodyName>
                 <topicName>/apply_force/trunk</topicName>
             </plugin>
         </xacro:if>
-        <xacro:if value="${ros_version == 2}">        
-            <plugin filename="libgazebo_ros_force.so" name="gazebo_ros_force">
-                <link_name>base</link_name>
-                <topicName>/apply_force/trunk</topicName>
-            </plugin>
-        </xacro:if>
+        <xacro:unless value="${ign}">      
+            <xacro:if value="${ros_version == 2}">        
+                <plugin filename="libgazebo_ros_force.so" name="gazebo_ros_force">
+                    <link_name>base</link_name>
+                    <topicName>/apply_force/trunk</topicName>
+                </plugin>
+            </xacro:if>
+        </xacro:unless>
     </gazebo>
 
-    <gazebo reference="imu_link">
-        <gravity>true</gravity>
-        <sensor name="imu_sensor" type="imu">
-            <always_on>true</always_on>
-            <update_rate>1000</update_rate>
-            <visualize>true</visualize>
-            <topic>__default_topic__</topic>
-            <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
-                <topicName>trunk_imu</topicName>
-                <bodyName>imu_link</bodyName>
-                <updateRateHZ>1000.0</updateRateHZ>
-                <gaussianNoise>0.0</gaussianNoise>
-                <xyzOffset>0 0 0</xyzOffset>
-                <rpyOffset>0 0 0</rpyOffset>
-                <frameName>imu_link</frameName>
-            </plugin>
-            <pose>0 0 0 0 0 0</pose>
-        </sensor>
-    </gazebo> -->
+    <xacro:unless value="${ign}">      
+        <gazebo reference="imu_link">
+            <gravity>true</gravity>
+            <sensor name="imu_sensor" type="imu">
+                <always_on>true</always_on>
+                <update_rate>1000</update_rate>
+                <visualize>true</visualize>
+                <topic>__default_topic__</topic>
+                <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+                    <ros>
+                        <namespace>/imu</namespace>
+                        <argument>~/out:=data</argument>
+                    </ros>
+                    <topicName>trunk_imu</topicName>
+                    <bodyName>imu_link</bodyName>
+                    <updateRateHZ>1000.0</updateRateHZ>
+                    <gaussianNoise>0.0</gaussianNoise>
+                    <xyzOffset>0 0 0</xyzOffset>
+                    <rpyOffset>0 0 0</rpyOffset>
+                    <frameName>imu_link</frameName>
+                </plugin>
+                <pose>0 0 0 0 0 0</pose>
+            </sensor>
+        </gazebo>
+    </xacro:unless>
+    <xacro:if value="${ign}">      
+        <gazebo reference="imu_link">
+            <gravity>true</gravity>
+            <sensor name="imu_sensor" type="imu">
+                <always_on>true</always_on>
+                <update_rate>50</update_rate>
+                <visualize>true</visualize>
+                <topic>/imu/data</topic>
+                <plugin filename="libignition-gazebo-imu-system.so" name="ignition::gazebo::systems::Imu">
+                    <topicName>trunk_imu</topicName>
+                    <bodyName>imu_link</bodyName>
+                    <updateRateHZ>50.0</updateRateHZ>
+                    <gaussianNoise>0.0</gaussianNoise>
+                    <xyzOffset>0 0 0</xyzOffset>
+                    <rpyOffset>0 0 0</rpyOffset>
+                    <frameName>imu_link</frameName>
+                </plugin>
+                <pose>0 0 0 0 0 0</pose>
+            </sensor>
+        </gazebo>
+    </xacro:if>
 
     <!-- Foot contacts. -->
-    <!-- <gazebo reference="FR_calf">
+    <gazebo reference="FR_calf">
         <sensor name="FR_foot_contact" type="contact">
         <update_rate>100</update_rate>
         <plugin name="contactPlugin" filename="libunitreeFootContactPlugin.so"/>
@@ -144,10 +177,10 @@
             <collision>RL_calf_fixed_joint_lump__RL_foot_collision_1</collision>
         </contact>
         </sensor>
-    </gazebo> -->
+    </gazebo>
 
     <!-- Visualization of Foot contacts. -->
-    <!-- <gazebo reference="FR_foot">
+    <gazebo reference="FR_foot">
         <visual>
             <plugin name="drawForcePlugin" filename="libunitreeDrawForcePlugin.so">
                 <topicName>FR_foot_contact</topicName>
@@ -174,7 +207,7 @@
                 <topicName>RL_foot_contact</topicName>
             </plugin>
         </visual>
-    </gazebo> -->
+    </gazebo>
 
     <!-- <gazebo reference="base">
         <material>Gazebo/Green</material>
