@@ -142,42 +142,79 @@
     </xacro:if>
 
     <!-- Foot contacts. -->
-    <gazebo reference="FR_calf">
-        <sensor name="FR_foot_contact" type="contact">
-        <update_rate>100</update_rate>
-        <plugin name="contactPlugin" filename="libunitreeFootContactPlugin.so"/>
-        <contact>
-            <collision>FR_calf_fixed_joint_lump__FR_foot_collision_1</collision>
-        </contact>
-        </sensor>
-    </gazebo>
-    <gazebo reference="FL_calf">
-        <sensor name="FL_foot_contact" type="contact">
-        <update_rate>100</update_rate>
-        <plugin name="contactPlugin" filename="libunitreeFootContactPlugin.so"/>
-        <contact>
-            <collision>FL_calf_fixed_joint_lump__FL_foot_collision_1</collision>
-        </contact>
-        </sensor>
-    </gazebo>
-    <gazebo reference="RR_calf">
-        <sensor name="RR_foot_contact" type="contact">
-        <update_rate>100</update_rate>
-        <plugin name="contactPlugin" filename="libunitreeFootContactPlugin.so"/>
-        <contact>
-            <collision>RR_calf_fixed_joint_lump__RR_foot_collision_1</collision>
-        </contact>
-        </sensor>
-    </gazebo>
-    <gazebo reference="RL_calf">
-        <sensor name="RL_foot_contact" type="contact">
-        <update_rate>100</update_rate>
-        <plugin name="contactPlugin" filename="libunitreeFootContactPlugin.so"/>
-        <contact>
-            <collision>RL_calf_fixed_joint_lump__RL_foot_collision_1</collision>
-        </contact>
-        </sensor>
-    </gazebo>
+    <xacro:unless value="${ign}">
+        <gazebo reference="FR_calf">
+            <sensor name="FR_foot_contact" type="contact">
+            <update_rate>100</update_rate>
+            <plugin name="contactPlugin" filename="libunitreeFootContactPlugin.so"/>
+            <contact>
+                <collision>FR_calf_fixed_joint_lump__FR_foot_collision_1</collision>
+            </contact>
+            </sensor>
+        </gazebo>
+        <gazebo reference="FL_calf">
+            <sensor name="FL_foot_contact" type="contact">
+            <update_rate>100</update_rate>
+            <plugin name="contactPlugin" filename="libunitreeFootContactPlugin.so"/>
+            <contact>
+                <collision>FL_calf_fixed_joint_lump__FL_foot_collision_1</collision>
+            </contact>
+            </sensor>
+        </gazebo>
+        <gazebo reference="RR_calf">
+            <sensor name="RR_foot_contact" type="contact">
+            <update_rate>100</update_rate>
+            <plugin name="contactPlugin" filename="libunitreeFootContactPlugin.so"/>
+            <contact>
+                <collision>RR_calf_fixed_joint_lump__RR_foot_collision_1</collision>
+            </contact>
+            </sensor>
+        </gazebo>
+        <gazebo reference="RL_calf">
+            <sensor name="RL_foot_contact" type="contact">
+            <update_rate>100</update_rate>
+            <plugin name="contactPlugin" filename="libunitreeFootContactPlugin.so"/>
+            <contact>
+                <collision>RL_calf_fixed_joint_lump__RL_foot_collision_1</collision>
+            </contact>
+            </sensor>
+        </gazebo>
+    </xacro:unless>
+
+    <xacro:if value="${ign}">
+        <gazebo reference="FR_calf">
+            <sensor name="FR_foot_contact" type="contact">
+            <update_rate>100</update_rate>
+            <contact>
+                <collision>FR_calf_fixed_joint_lump__FR_foot_collision_1</collision>
+            </contact>
+            </sensor>
+        </gazebo>
+        <gazebo reference="FL_calf">
+            <sensor name="FL_foot_contact" type="contact">
+            <update_rate>100</update_rate>
+            <contact>
+                <collision>FL_calf_fixed_joint_lump__FL_foot_collision_1</collision>
+            </contact>
+            </sensor>
+        </gazebo>
+        <gazebo reference="RR_calf">
+            <sensor name="RR_foot_contact" type="contact">
+            <update_rate>100</update_rate>
+            <contact>
+                <collision>RR_calf_fixed_joint_lump__RR_foot_collision_1</collision>
+            </contact>
+            </sensor>
+        </gazebo>
+        <gazebo reference="RL_calf">
+            <sensor name="RL_foot_contact" type="contact">
+            <update_rate>100</update_rate>
+            <contact>
+                <collision>RL_calf_fixed_joint_lump__RL_foot_collision_1</collision>
+            </contact>
+            </sensor>
+        </gazebo>
+    </xacro:if>
 
     <!-- Visualization of Foot contacts. -->
     <gazebo reference="FR_foot">
