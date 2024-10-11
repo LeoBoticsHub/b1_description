@@ -38,7 +38,7 @@ def generate_launch_description():
             namespace='',
             executable='rviz2',
             name='rviz2',
-            arguments=['-d', [os.path.join(pkg_path, 'rviz', 'ros2_check_joint.rviz')]]
+            arguments=['-d', [os.path.join(pkg_path, 'rviz', 'ros2_champ_robot_description.rviz')]]
     )
         
     return LaunchDescription([rviz])
