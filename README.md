@@ -7,7 +7,6 @@ This package contains the b1 description files. It works both with ROS and ROS 2
 this package depends on the following:
 
 * [sensors_description](https://github.com/LeoBoticsHub/sensors_description.git)
-* velodyne_description ```sudo apt install ros-$ROS_DISTRO-velodyne-description```
 
 please clone it in the same workspace of b1_description.
 
@@ -26,6 +25,20 @@ roslaunch b1_description b1_rviz.launch sensors:=true
 ```bash
 ros2 launch b1_description b1_rviz.launch.py
 ```
+
+* ROS 2 with the champ library and Gazebo simulation:
+
+```bash
+ros2 launch champ_simulation robot_sim.launch.py SENSORS:=true
+ros2 launch b1_description b1_rviz_champ.launch.py
+```
+
+ * ROS 2 with the champ library and Ignition Fortrees simulation:
+
+```bash
+ros2 launch champ_simulation robot_ign_sim.launch.py SENSORS:=true
+ros2 launch b1_description b1_rviz_champ.launch.py
+```  
 
 To upload robot description and start robot state publisher for rviz visualization purposes in real applications:
 
@@ -50,3 +63,4 @@ We recommand users to run this package in Ubuntu 20.04 or 22.04 and ROS noetic, 
 The package is provided by:
 
 * [Federico Rollo](https://github.com/FedericoRollo) [Mantainer]
+* [Giuseppe Alfonso](https://github.com/GiuseppeAlfonso) [Mantainer]
