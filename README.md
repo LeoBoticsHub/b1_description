@@ -43,7 +43,7 @@ ros2 launch b1_description upload.launch.py
 
 ## Environment
 
-We recommand users to run this package in Ubuntu 20.04 or 22.04 and ROS noetic, Foxy or Humble envir\onment.
+We recommand users to run this package in Ubuntu 20.04 or 22.04 and ROS noetic, Foxy or Humble environment.
 
 ## Authors
 
