@@ -14,7 +14,7 @@ def generate_launch_description():
     # Args
     use_rviz = LaunchConfiguration('use_rviz')
 
-    DeclareLaunchArgument(
+    use_rviz_arg = DeclareLaunchArgument(
         'use_rviz',
         default_value='False'
     )
@@ -53,4 +53,4 @@ def generate_launch_description():
         arguments=['-d', [os.path.join(pkg_path, 'rviz', 'ros2_robot_description.rviz')]]
     )
     
-    return LaunchDescription([tf_ns_arg, robot_state_pub, rviz])
+    return LaunchDescription([tf_ns_arg, use_rviz_arg, robot_state_pub, rviz])
