@@ -6,14 +6,19 @@ import os
 from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
-
+    # B1 description loading from xacro
     pkg_path = get_package_share_directory("b1_description")
-
     xacro_path = os.path.join(pkg_path, 'xacro/robot.xacro')
-
     assert os.path.exists(xacro_path), "The robot.xacro doesnt exist in " + str(xacro_path)
-
-    doc = xacro.process_file(xacro_path, mappings={'DEBUG': 'false', 'SENSORS': 'true',  'LIDAR': 'true', 'CAMERAS': 'true'})
+    doc = xacro.process_file(
+        xacro_path,
+        mappings={
+            'DEBUG': 'false',
+            'SENSORS': 'true',
+            'LIDAR': 'true',
+            'CAMERAS': 'true'
+        }
+    )
     robot_desc = doc.toprettyxml(indent='  ')
 
     robot_state_pub = Node(
