@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:include filename="$(find sensors_description)/xacro/VLP-16.urdf.xacro"/>
+    <xacro:include filename="$(find sensors_description)/xacro/hesai_xt16.xacro"/>
     <xacro:include filename="$(find sensors_description)/xacro/realsense_d430.urdf.xacro" />
 
     <!-- Lidar -->
@@ -39,15 +39,15 @@
             <material>Gazebo/White</material>
         </gazebo>
 
-        <xacro:VLP-16 parent="lidar_mount" name="lidar" sim_ignition="true" topic="/lidar_points">
+        <xacro:hesai_xt16 parent="lidar_mount" name="lidar" sim_ignition="true" topic_name="/lidar">
             <origin xyz="0 0 0.025" rpy="0 0 0" />
-        </xacro:VLP-16>
+        </xacro:hesai_xt16>
 
         <link name="hesai_lidar"/>
         <joint name="hesai_lidar_joint" type="fixed">
-                <parent link="lidar"/>
-                <child link="hesai_lidar"/>
-                <origin xyz="0 0 0" rpy="0 0 1.57"/>
+            <parent link="lidar"/>
+            <child link="hesai_lidar"/>
+            <origin xyz="0 0 0" rpy="0 0 1.57"/>
         </joint>
 
     </xacro:if> 
